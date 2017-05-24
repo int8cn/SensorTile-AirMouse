@@ -576,9 +576,10 @@ static int HID_Application_Process(void)
 #elif defined(MOUSE_IP)
       static int8_t ipRepVal[REPORT_IP_LEN_0] = {0,0,0,0};
       static int8_t cnt = 0;
-
-        ipRepVal[1] = xValue;
-        ipRepVal[2] = yValue;
+        
+//      ipRepVal[0] = BUTTON_1;
+      ipRepVal[1] = xValue;
+      ipRepVal[2] = yValue;
 
       HidDevice_Update_Input_Report(0,0,REPORT_IP_LEN_0,ipRepVal);
 #endif
